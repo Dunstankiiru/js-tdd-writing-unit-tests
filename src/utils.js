@@ -1,13 +1,9 @@
 // Your code here
-export function pointsForWord(word){
+export function pointsForWord(word) {
     let points = 0;
-    if (!word){
-        return points
+    for (const char of word) {
+      points += /[aeiou]/i.test(char) ? 1 : 2;
     }
-    for(let letter of word){
-        points += /[aeiou]/.test(letter.toLowerCase()) ? 1 : 2;
-    }
-    return points
-}
-
-pointsForWord("test")
+    return points;
+  }
+  
